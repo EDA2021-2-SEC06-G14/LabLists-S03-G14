@@ -112,7 +112,7 @@ def newAuthor(name):
     """
     author = {'name': "", "books": None,  "average_rating": 0}
     author['name'] = name
-    author['books'] = lt.newList('ARRAY_LIST')
+    author['books'] = lt.newList('SINGLE_LINKED')
     return author
 
 
