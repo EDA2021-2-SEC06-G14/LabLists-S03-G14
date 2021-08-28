@@ -27,4 +27,11 @@ Este directorio contiene todo el código de base que se entrega para el funciona
 
     |-- Utils: Funciones auxiliares para el funcionamiento de los TADs y estructuras de datos
 
+    Estudiante 1:   Sebastian Guerrero Rios
+                Correo: s.guerrero3@uniandes.edu.co
+                Codigo: 202021249
+
+    Estudiante 2:   Diego Alejandro González Vargas
+                Correo: da.gonzalezv1@uniandes.edu.co
+                Codigo: 202110240
 
