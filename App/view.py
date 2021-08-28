@@ -26,6 +26,8 @@ import controller
 from DISClib.ADT import list as lt
 assert cf
 
+from time import process_time
+
 
 """
 La vista se encarga de la interacción con el usuario
@@ -90,27 +92,39 @@ while True:
     if int(inputs[0]) == 1:
         print("Cargando información de los archivos ....")
         catalog = initCatalog()
+        t1 = process_time()
         loadData(catalog)
+        t2 = process_time()
         print('Libros cargados: ' + str(lt.size(catalog['books'])))
         print('Autores cargados: ' + str(lt.size(catalog['authors'])))
         print('Géneros cargados: ' + str(lt.size(catalog['tags'])))
         print('Asociación de Géneros a Libros cargados: ' +
               str(lt.size(catalog['book_tags'])))
+        print("Time = " + str(t2 - t1) + "seg")
 
     elif int(inputs[0]) == 2:
         number = input("Buscando los TOP ?: ")
         books = controller.getBestBooks(catalog, int(number))
+        t3 = process_time()
         printBestBooks(books)
+        t4 = process_time()
+        print("Time = " + str(t4 - t3) + "seg")
 
     elif int(inputs[0]) == 3:
         authorname = input("Nombre del autor a buscar: ")
+        t5 = process_time()
         author = controller.getBooksByAuthor(catalog, authorname)
+        t6 = process_time()
         printAuthorData(author)
+        print("Time = " + str(t6 - t5) + "seg")
 
     elif int(inputs[0]) == 4:
         label = input("Etiqueta a buscar: ")
+        t7 = process_time()
         book_count = controller.countBooksByTag(catalog, label)
+        t8 = process_time()
         print('Se encontraron: ', book_count, ' Libros')
+        print("Time = " + str(t8 - t7) + "seg")
 
     else:
         sys.exit(0)
